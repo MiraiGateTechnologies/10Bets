@@ -1,0 +1,126 @@
+  .sport-details-header{
+    display: flex;
+    height: 40px;
+    width: 100%;
+    padding-top: 10px;
+    background-color: #233479;
+  }
+  .icon{
+    width: 10%;
+    padding-left: 10px;
+    margin-top: -3px;
+}
+.shadow{
+    background-color: #30469C;
+
+}
+.icon-cricket{
+    width: 55%;
+    margin-top: 8px;
+  }
+  .one-x-two{
+    width: 45%;
+    display: flex;
+    justify-content: space-between;
+  }
+  .one,.x,.two{
+    display: flex;
+    flex: 1;
+    max-height: 60px;
+    justify-content: center;
+    align-items: center;
+  }
+  .match-team{
+    padding-left: 10px;
+  }
+  .icon-cricket{
+    padding-left: 10px;
+  }
+
+  .icon-cricket-win{
+    padding-top: 5px;
+    padding-left: 10px;
+    width: 55%;
+    font-size: 15px;
+    line-height: 0.9rem;
+    justify-content: center;
+    align-items: center;
+  }
+  .i-frame{
+    border: 1px solid gray;
+    color: white;
+  }
+  .match-card {
+    margin-top: 20px;
+    color: white;
+    font-family: 'poppins', sans-serif;
+    font-weight: 600;
+    margin-bottom: 10px;
+    /* border-radius: 5px; */
+    /* overflow: hidden; */
+  }
+  .latest{
+    width: 45%;
+  }
+  .suppended-text{
+    background: rgb(216,225,82);
+    background: linear-gradient(90deg, rgba(216,225,82,1) 45%, rgba(83,103,176,1) 55%);
+    display: flex;
+    font-size: 14px;
+    height: 60px;
+    font-family: 'poppins';
+    justify-content: center;
+    align-items: center;
+    padding-top: 10px;
+  }
+  .suppended-text p{
+
+    border-radius: 10%;
+    color: red;
+
+  }
+  .match-details{
+    border-bottom: 1px solid black;
+  }
+  .bet-one,.bet-x,.bet-two{
+    display: flex;
+    flex: 1;
+    height: 50px;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+  }
+  .header{
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    border-bottom: 1px solid black;
+    height: 40px;
+  }
+
+ .shadow .nav-link{
+    font-family: 'poppins',sans-serif;
+    font-weight: 400;
+    justify-content: center;
+    /* align-items: center; */
+    /* text-align: center; */
+
+}
+  .sport-details-text{
+   width: 80%;
+    line-height: 0.9em !important;
+    padding-left: 5px;
+    margin-bottom: 0;
+    font-family: "poppins", sans-serif;
+    color: white;
+    font-size: 13px;
+    text-align: center;
+    padding-top: 3px;
+
+
+
+
+
+
+    
+}

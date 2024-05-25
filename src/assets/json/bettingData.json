@@ -1,0 +1,55 @@
+[{
+    "code": "C1067",
+    "bits": {
+        "1": 0,
+        "2": 0
+    },
+    "sessionPM": 0,
+    "title": "2024-05-23 14:30:00",
+    "matchMax": 200000,
+    "oddsLink": "https://stream.betguru247.net/sse",
+    "matchcode": "2216",
+    "usedLimit": 0,
+    "team":"AUSTRALIA Vs NEW ZEALAND" ,
+    "sessionOdds": [
+        {
+            "name": "First Over Run",
+            "nrate": 100,
+            "nrun": 50,
+            "yrate": 150,
+            "yrun": 75
+        },
+        {
+            "name": "First Over Wicket",
+            "nrate": 100,
+            "nrun": 50,
+            "yrate": 150,
+            "yrun": 75
+        },
+        {
+            "name": "After  10 overs Runs",
+            "nrate": 1000,
+            "nrun": 50,
+            "yrate": 150,
+            "yrun": 75
+        }
+    ],
+    "name": "Mera Client",
+    "matchOdds": [
+        {
+            "team":"AUSTRALIA",
+            "krate": 100,
+            "lrate": 50
+        },
+        {
+            "team":"NEW ZEALAND",
+            "krate": 100,
+            "lrate": 50
+        }
+    ],
+    "coin": 99998562,
+    "status": true,
+    "matchMin": 100,
+    "streamLink": "?sse"
+}
+]

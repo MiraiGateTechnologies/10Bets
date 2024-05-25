@@ -1,0 +1,656 @@
+/* You can add global styles to this file, and also import other style files */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+body{
+    background-color: white;
+    font-family: 'poppins';
+    /* color: white; */
+}
+.navbar{
+    background-color: #233479 !important;
+}
+.card-text{
+    display: flex;
+}
+.offcanvas{
+    background-color: #30469C;
+    color: white;
+}
+
+.btn-close {
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    z-index: 2; /* Ensure the button is above the image */
+}
+.image-text {
+    color: white; /* White text color */
+    font-size: 14px; /* Adjust as needed */
+    margin-top: 8px; /* Space between the image and text */
+}
+.nav-link{
+    color: white;
+    font-family: 'poppins',sans-serif;
+    font-weight: 400;
+    font-size: 18px;
+}
+.nav-item img{
+  width: 20px;
+  height: 20px;
+  margin-top: 10px;
+  margin-right: 7px;
+}
+
+.offcanvas-header {
+    background-color: #233479;
+    height: 160px;
+    position: relative; /* Needed to position the close button */
+    display: flex;
+    justify-content: center; /* Center children horizontally */
+    align-items: center; /* Center children vertically */
+}
+
+.image-container {
+    width: 70px; /* Adjust to fit the image */
+    height: 70px;
+    border-radius: 50%; /* Make it round */
+    overflow: hidden; /* Cut off anything outside the border-radius */
+    position: absolute; /* Position absolutely to stay centered */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.header-image {
+    width: 100%; /* Make the image fill the container */
+    height: auto; /* Maintain aspect ratio */
+  
+}
+.image-text {
+    color: white; /* White text color */
+    font-size: 20px; /* Adjust as needed */
+    margin-top: 120px; /* Space between the image and text */
+    font-family: 'poppins',sans-serif;
+}
+
+.btn-close {
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    z-index: 2; /* Ensure it is above the image and text */
+}
+#offcanvasNavbar {
+    width: 250px; /* Set the width of the offcanvas navbar */
+}
+.navbar-toggler {
+    order: 1; /* Toggler first */
+    color: white;
+    border: none;
+} 
+.navbar-toggler-icon {
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba(255, 255, 255, 1)' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+}
+.navbar-brand {
+    order: 2; /* Logo next */
+    margin-left: 10px; /* Space between toggler and logo */
+    
+}
+.navbar {
+    display: flex;
+    align-items: center; /* Ensure items are vertically aligned */
+}
+.navbar-toggler:focus, .navbar-toggler:active {
+  outline: none !important; /* Important to override any existing styles */
+  border: none !important;
+  box-shadow: none !important; /* In case there's a shadow being applied */
+}
+.header-h3{
+    text-align: center;
+}
+.header-text{
+    font-family: 'poppins',sans-serif;
+    font-weight: 600;
+    font-size: 12px;
+    color: white;
+    margin-top: 8px;
+    margin: 5px;
+}
+.header-text-bottom{
+    font-family: 'poppins',sans-serif;
+    font-weight: 600;
+    font-size: 12px;
+    color: white;
+    margin: 2px;
+    padding-top: 5px;
+}
+.marquee {
+    width: 100%; /* Full width of the viewport */
+    white-space: nowrap; /* Ensures the text stays in a single line */
+    overflow: hidden; /* Keeps everything tidy and hides anything going out of bounds */
+    box-sizing: border-box;
+    height: 35px;
+    padding-top:5px ;
+    color: black;
+}
+.carousel-control-prev, .carousel-control-next {
+  display: none;
+}
+.carousel-indicators{
+  display: none;
+}
+
+.marquee p {
+    font-family: 'poppins';
+    display: inline-block;
+    padding-left: 100%; /* Start off the screen to the right */
+    animation: marquee 10s linear infinite; /* Adjust time for different speeds */
+    font-weight: 400;
+    font-size: 20px;
+}
+.games-text{
+    margin-top: 10px;
+}
+h3{
+    color: white;
+    font-family: 'poppins';
+    margin-left: 5px;
+}
+h4{
+    font-size: 14px;
+    color: white;
+    margin-left: 10px;
+    font-family: 'poppins';
+
+}
+.game-list {
+  display: flex;
+  gap: 20px;
+  flex-direction: row;  /* Maintains a horizontal row of game items */
+  overflow-y: scroll;  /* Enables vertical scrolling */
+  scrollbar-width: none;  /* Hides scrollbar for Firefox */
+  -ms-overflow-style: none;  /* Hides scrollbar for IE and Edge */
+}
+
+.game-list::-webkit-scrollbar {
+  display: none;  /* Hides scrollbar for Chrome, Safari, and Opera */
+}
+
+.game-item {
+  margin-top: 10px;
+  display: flex;
+  flex-direction: column;  /* Stacks the image and text vertically */
+  align-items: center;  /* Centers the items horizontally in the flex container */
+  justify-content: center;  /* Centers the items vertically in the flex container */
+  text-align: center;  /* Centers the text */
+
+}
+.game-slider{
+  display: flex;
+  flex-direction: row;  /* Maintains a horizontal row of game items */
+  overflow-y: scroll;  /* Enables vertical scrolling */
+  scrollbar-width: none;  /* Hides scrollbar for Firefox */
+  -ms-overflow-style: none;  /* Hides scrollbar for IE and Edge */
+}
+.game-slider img{
+  padding: 6px;
+  width: 175px;
+  height: 54px;
+  border-radius: 14px;
+}
+.inplay {
+  margin: 7px;
+    display: flex;
+    align-items: center;
+    background-color: #30469C;
+    height: 34px;
+    width: 122px;
+    padding: 7px;
+    position: relative;
+    border-radius: 5px;
+    clip-path: polygon(0 0, 75% 0, 100% 100%, 80% 100%, 0 100%);
+    color: white;
+    font-family: "Poppins", sans-serif;
+    gap: 10px;
+    font-size: 14px;
+    text-decoration: none;
+    overflow: hidden;
+}
+
+.inplay .fa-play {
+  border: solid white;
+  border-width: 0 2px 2px 0;
+  display: inline-block;
+  padding: 3px;
+  margin-right: 5px;
+  /* Adjust icon's size and rotation as necessary */
+}
+
+.inplay .inplay-text {
+  white-space: nowrap; /* Prevents the text from wrapping */
+}
+
+
+
+.game-item a {
+  color: inherit;  /* Ensures the color matches the surrounding text or can be set to a specific color */
+  text-decoration: none;  /* Removes the underline from the link */
+}
+
+.game-item p {
+  font-family: "poppins", sans-serif;
+  font-weight: 500;
+  text-wrap: nowrap;
+  font-size: 11px;
+}
+.game-list img {
+  width: 25px;
+  height: 25px;
+  margin-bottom: 5px;  /* Adds space between the image and the text */
+}
+
+@keyframes marquee {
+    from { transform: translateX(0); }
+    to { transform: translateX(-100%); } /* Move the full width of the text to the left */
+}
+
+
+@media (min-width: 768px) {
+    #carouselExampleIndicators img {
+      height: 400px; /* Set a fixed height for larger screens */
+      object-fit: cover; /* Adjust how the image fits in the container */
+    }
+    #offcanvasNavbar {
+      display: none !important;  /* Use !important to ensure override */
+    }
+  
+    .login-footer img{
+        position: fixed;
+        left: 0;
+        width: 100%;
+        background-repeat: no-repeat;
+        background-size: contain;
+
+      }
+
+  .login-page {
+    height: 50vh;
+    background: rgb(0,0,0);
+    background: linear-gradient(180deg, rgba(0,0,0,1) 35%, rgba(255,255,255,1) 35%);
+    
+
+
+  }
+  .img-logo{
+    justify-content: center;
+    text-align: center;
+  }
+
+  .login-form {
+    width: 100%;
+    max-width: 500px; /* Adjust the width as necessary */
+    padding: 20px;
+    border-radius: 10px; /* Rounded corners */
+  }
+
+  .login-form input {
+    height: 40px;
+    border-radius: 0;
+    color: black; /* White text */
+    margin-bottom: 20px;
+  }
+
+  .login-form button {
+    background: #30469C;
+    border: none;
+    color: #fff; /* White text */
+    margin-bottom: 10px;
+    width: 100%;
+    padding: 10px;
+    border-radius: 5px; /* Rounded corners */
+  }
+
+  
+
+  }
+  
+  /* This will apply styles for devices with width less than 768px (e.g., mobile devices) */
+  @media (max-width: 767px) {
+    #carouselExampleIndicators img {
+      height: 150px; /* Set a fixed height for smaller screens */
+      object-fit: cover; /* Adjust how the image fits in the container */
+      border-radius: 10px;
+    }
+    .login-footer img{
+        position: fixed;
+        left: 0;
+        width: 400px;
+        background-repeat: no-repeat;
+        background-size: contain;
+        background-position: bottom;
+
+
+      }
+      
+
+  .login-page {
+    height: 50vh;
+    background: rgb(255,255,255);
+    background: linear-gradient(0deg, rgba(255,255,255,1) 35%, rgba(0,0,0,1) 35%);
+
+
+
+  }
+
+  .login-form {
+    width: 100%;
+    max-width: 500px; /* Adjust the width as necessary */
+    padding: 20px;
+    border-radius: 10px; /* Rounded corners */
+  }
+
+  .login-form input {
+    height: 40px;
+    border-radius: 0;
+    border: 1px solid #444;
+    color: black; /* White text */
+    margin-bottom: 20px;
+  }
+
+  .login-form button {
+    background: #30469C;
+    border: none;
+    color: #fff; /* White text */
+    margin-bottom: 10px;
+    width: 100%;
+    padding: 10px;
+    border-radius: 5px; /* Rounded corners */
+  }
+  }
+  @media (max-width:380px){
+    .login-footer {
+        position: fixed;
+        left: 0;
+        width: 100%;
+        background-repeat: no-repeat;
+        background-size: contain;
+        background-position: bottom;
+      }
+      .login-background-img img{
+        margin-top: -10px !important;
+        width: 90%;
+        justify-content: center;
+     }      
+
+  .login-page {
+    height: 50vh;
+    background: rgb(255,255,255);
+    background: linear-gradient(0deg, rgba(255,255,255,1) 35%, rgba(0,0,0,1) 35%);
+
+
+    
+  }
+
+  .login-form {
+    
+    width: 340px !important;
+    max-width: 500px; /* Adjust the width as necessary */
+    padding: 20px;
+    border-radius: 10px; /* Rounded corners */
+  }
+
+  .login-form input {
+    height: 40px;
+    border-radius: 0;
+    border: 1px solid #444;
+    color: black; /* White text */
+    margin-bottom: 20px;
+  }
+
+  .login-form button {
+    background: #30469C;
+    border: none;
+    color: #fff; /* White text */
+    margin-bottom: 10px;
+    width: 100%;
+    padding: 10px;
+    border-radius: 5px; /* Rounded corners */
+  }
+
+  
+
+  }
+  @media (max-width:414px){
+    .img-logo{
+        justify-content: center;
+        text-align: center;
+        margin-bottom: 5px;
+      }
+    .login-footer {
+        position: fixed;
+        left: 0;
+        width: 100%;
+        background-repeat: no-repeat;
+        background-size: contain;
+        background-position: bottom;
+      }
+      
+      .login-background-img img{
+        width: 90%;
+        justify-content: center;
+     }
+  .login-page {
+    height:50vh;
+    background: rgb(255,255,255);
+    background: linear-gradient(0deg, rgba(255,255,255,1) 35%, rgba(0,0,0,1) 35%);
+
+  }
+
+  .login-form {
+    width: 370px;
+    max-width: 500px; /* Adjust the width as necessary */
+    padding: 20px;
+    border-radius: 10px; /* Rounded corners */
+  }
+
+  .login-form input {
+    height: 40px;
+    border-radius: 0;
+    border: 1px solid #444;
+    color: black; /* White text */
+    margin-bottom: 20px;
+  }
+
+  .login-form button {
+    background: #30469C;
+    border: none;
+    color: #fff; /* White text */
+    margin-bottom: 10px;
+    width: 100%;
+    padding: 10px;
+    border-radius: 5px; /* Rounded corners */
+  }
+
+  
+
+  }
+  @media (max-width:440px){
+    .login-footer img{
+        position: fixed;
+        left: 0;
+        width: 100%;
+        background-repeat: no-repeat;
+        background-size: contain;
+        background-position: bottom;
+      }
+      .img-logo{
+        justify-content: center;
+        text-align: center;
+        margin-bottom: 10px;
+      }   
+      .login-background-img img{
+        width: 90%;
+        justify-content: center;
+     }
+
+  .login-page {
+    height: 50vh;
+    background: rgb(255,255,255);
+    background: linear-gradient(0deg, rgba(255,255,255,1) 35%, rgba(0,0,0,1) 35%);
+
+  }
+
+  .login-form {
+    width: 370px;
+    max-width: 500px; /* Adjust the width as necessary */
+    padding: 20px;
+    border-radius: 10px; /* Rounded corners */
+  }
+
+  .login-form input {
+    border: 1px solid #444;
+    color: black; /* White text */
+    margin-bottom: 20px;
+  }
+
+  .login-form button {
+    background: #30469C;
+    border: none;
+    color: #fff; /* White text */
+    margin-bottom: 10px;
+    width: 100%;
+    padding: 10px;
+    border-radius: 5px; /* Rounded corners */
+  }
+
+  
+
+  }
+
+
+  .match-card {
+    /* display: flex; */
+    /* align-items: center; */
+    background-color: #30469C;
+    color: white;
+    font-family: 'Arial', sans-serif;
+    margin-bottom: 10px;
+    /* border-radius: 5px; */
+    /* overflow: hidden; */
+  }
+  .header{
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    border-bottom: 1px solid black;
+    height: 40px;
+  }
+  .match-score{
+    margin-bottom: 80px;
+  }
+  .icon-cricket{
+    font-family: 'poppins',sans-serif;
+    width: 55%;
+    margin-top: 8px;
+  }
+  .one-x-two{
+    width: 45%;
+    display: flex;
+    justify-content: space-between;
+  }
+  .one,.x,.two{
+    display: flex;
+    flex: 1;
+    max-height: 60px;
+    justify-content: center;
+    align-items: center;
+  }
+  .match-details{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+
+  }
+  .match-left{
+    width: 55%;
+    display: flex;
+    justify-content: space-between;
+
+  }
+  
+  .match-date{
+    width: 20%;
+    margin-left: 2px;
+    padding-top: 6px;
+
+  }
+
+  .match-team{
+    width: 80%;
+    margin-left: 10px;
+    font-size: 12px;
+  }
+
+  .match-team p{
+    margin-bottom: 2px;
+    padding-top: 10px;
+  }
+
+  .match-one-x-two{
+    width: 45%;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .bet-one,.bet-x,.bet-two{
+    display: flex;
+    flex: 1;
+    max-height: 60px;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+  }
+
+  .bet-one{
+    background-color: #D8E152;
+    color: white;
+  }
+
+  .bet-x{
+    background-color: #5367B0;
+    color: white;
+  }
+
+  .bet-two{
+    background-color: #FF687B;
+    color: white;
+  }
+
+  .match-time{
+    overflow-wrap: break-word;
+    font-size: 0.5rem;
+    margin-top: 9px;
+    padding-left: 2px;
+    justify-content: center;
+    text-align: center;
+  }
+
+  @keyframes blink {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0; }
+  }
+
+  .small-bracket{
+    color: #FFB449;
+    margin-left: 5px;
+    margin-top: 10px;
+  }
+  
+  .blinking-bullet {
+    display: inline-block; /* This makes the span respect width and height */
+    width: 10px;
+    height: 10px;
+    border-radius: 50%; /* This creates the circle shape */
+    background-color: red; /* Set the circle's color */
+    animation: blink 1s linear infinite;
+  }
+  

@@ -1,0 +1,188 @@
+<div class="container-fluid">
+    <div class="col-12">
+    <div class="sport-details-header" style="margin-top: 10px">
+      <div class="icon">
+        <i  class="bi bi-stopwatch" style="color: white; font-weight: bold;" (click)="goBack()" ></i>
+      </div>
+        <div class="sport-details-text">
+        <!-- {{team1}} vs {{team2}} -->
+        {{team}}
+      </div>
+      <div class="icon">
+        <i class="bi bi-info-circle" style="color: #F55F13; font-weight: bold;" (click)="goBack()" ></i>
+      </div>
+    </div>
+    </div>
+    <div class="nav nav-tabs shadow" id="tabMenu" role="tablist" style="justify-content: center;">
+      <button class="nav-link" [class.active]="activeTab === 'score'" (click)="toggleVisibility('score')" role="tab">SCORE</button>
+      <button class="nav-link" [class.active]="activeTab === 'liveTv'" (click)="toggleVisibility('liveTv')" role="tab">LIVE</button>
+      <button class="nav-link" [class.active]="activeTab === 'mybet'" (click)="toggleVisibility('mybet')" role="tab">MY BETS</button>
+      <button class="nav-link" [class.active]="activeTab === 'news'" (click)="toggleVisibility('news')" role="tab">NEWS</button>
+    </div>
+  </div>
+  <div class="container-fluid">
+    <div *ngIf="visibilityStates.score"  style="color: white;">
+      <app-score [scoreDetails]="scoreDetails"></app-score>
+    </div>
+    <div *ngIf="visibilityStates.liveTv"  style="color: white;">
+        <div class="container-fluid">
+            <div  class="i-frame">
+              <iframe src="https://www.youtube.com/watch?v=amMJfaB5dXo" title="Live Stream" style="width: 100%; height: 100%; background-color: white;"></iframe>
+            </div>
+          </div>    
+    </div>
+    </div>
+    <div *ngIf="visibilityStates.mybet" style="color: white;">
+        <app-my-bets [bettDetails]="matchBets"  [matchBets] = "matchBets"></app-my-bets>
+    </div>
+    <div class="container-fluid">
+        <div class="match-card">
+            <div class="header">
+                <div class="icon-cricket">Match Odds</div>
+                <div class="one-x-two">
+                    <div class="one">Back</div>
+                    <div class="two">Lay</div>
+                </div>        
+            </div>
+            <div class="match-details" *ngFor="let data of MatchOdds">
+                <div class="match-left">                    
+                    <div class="match-team">
+                        <p>{{truncateTitle(truncateTitle(data.team))}}</p>
+                    </div>
+                </div>
+                <div class="match-one-x-two" *ngIf="data.krate !=0 || data.lrate !=0">
+                    <div class="bet-one"  (click)="open('K',data)">{{data.krate}}</div>
+                    <div class="bet-two"  (click)="open('L',data)">{{data.lrate}}</div>
+                </div>       
+                <div class="latest" *ngIf="data.krate==0 && data.lrate==0">
+                    <div class="suppended-text" >
+                      <p >SUSPENDED</p>
+              
+                      </div>
+                  </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container-fluid">
+      <div class="match-card">
+          <div class="header">
+              <div class="icon-cricket">BOOKMARK</div>
+              <div class="one-x-two">
+                  <div class="one">Back</div>
+                  <div class="two">Lay</div>
+              </div>        
+          </div>
+          <div class="match-details" *ngFor="let data of MatchOdds">
+            <div class="match-left">                    
+                <div class="match-team">
+                    <p>{{truncateTitle(truncateTitle(data.team))}}</p>
+                </div>
+            </div>
+            <div class="match-one-x-two" *ngIf="data.krate !=0 || data.lrate !=0">
+                <div class="bet-one"  (click)="open('K',data)">{{data.krate}}</div>
+                <div class="bet-two"  (click)="open('L',data)">{{data.lrate}}</div>
+            </div>       
+            <div class="latest" *ngIf="data.krate==0 && data.lrate==0">
+                <div class="suppended-text" >
+                  <p >SUSPENDED</p>
+          
+                  </div>
+              </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="container-fluid">
+      <div class="match-card">
+          <div class="header">
+              <div class="icon-cricket-win">WHO WIll WIN THE MATCH</div>
+              <div class="one-x-two">
+                  <div class="one">Back</div>
+                  <div class="two">Lay</div>
+              </div>        
+          </div>
+          <div class="match-details" *ngFor="let data of MatchOdds">
+            <div class="match-left">                    
+                <div class="match-team">
+                    <p>{{truncateTitle(truncateTitle(data.team))}}</p>
+                </div>
+            </div>
+            <div class="match-one-x-two" *ngIf="data.krate !=0 || data.lrate !=0">
+                <div class="bet-one"  (click)="open('K',data)">{{data.krate}}</div>
+                <div class="bet-two"  (click)="open('L',data)">{{data.lrate}}</div>
+            </div>       
+            <div class="latest" *ngIf="data.krate==0 && data.lrate==0">
+                <div class="suppended-text" >
+                  <p >SUSPENDED</p>
+                  </div>
+              </div>
+        </div>
+      </div>
+    </div>
+    <div class="container-fluid">
+        <div class="nav nav-tabs shadow" id="tabMenu" role="tablist" style="justify-content: left;">
+            <button class="nav-link" [class.active]="activeTab === 'market'" (click)="toggleVisibility('market')" role="tab">MARKET</button>
+            <button class="nav-link" [class.active]="activeTab === 'primeCricket'" (click)="toggleVisibility('primeCricket')" role="tab">PREMIUM CRICKET</button>
+        </div>
+    </div>
+
+
+
+    <div class="container-fluid">
+        <div class="match-card">
+            <div class="header">
+                <div class="icon-cricket">SESSIONS RUNS</div>
+                <div class="one-x-two">
+                    <div class="one">YES</div>
+                    <div class="two">NO</div>
+                </div>        
+            </div>
+            <div class="match-details" *ngFor="let data of sessionBets">
+                <div class="match-left">                    
+                    <div class="match-team">
+                        <p>{{truncateTitle(truncateTitle(data.name))}}</p>
+                    </div>
+                </div>
+                <div class="match-one-x-two" *ngIf="(data.nrun !=0 || data.nrate != 0)">
+                    <div class="bet-one" (click)="open('YES',data)" >{{data.nrun}},{{data.nrate}}</div>
+                    <div class="bet-two" (click)="open('NO',data)" >{{data.yrun}},{{data.yrate}}</div>
+                </div> 
+                <div class="latest" *ngIf="(data.nrun ==0 || data.nrate == 0)" >
+                    <div class="suppended-text" >
+                      <p >SUSPENDED</p>
+                      </div>
+                  </div>      
+            </div>
+        </div>
+      </div>
+
+      <!-- TIE MATCH CONTAINER -->
+    <div class="container-fluid" style="margin-bottom: 70px;">
+        <div class="match-card">
+            <div class="header">
+                <div class="icon-cricket">TIED MATCH</div>
+                <div class="one-x-two">
+                    <div class="one">Back</div>
+                    <div class="two">Lay</div>
+                </div>        
+            </div>
+            <div class="match-details" *ngFor="let data of MatchOdds">
+              <div class="match-left">                    
+                  <div class="match-team">
+                      <p>{{truncateTitle(truncateTitle(data.team))}}</p>
+                  </div>
+              </div>
+              <div class="match-one-x-two" *ngIf="data.krate !=0 || data.lrate !=0">
+                  <div class="bet-one"  (click)="open('K',data)">{{data.krate}}</div>
+                  <div class="bet-two"  (click)="open('L',data)">{{data.lrate}}</div>
+              </div>       
+              <div class="latest" *ngIf="data.krate==0 && data.lrate==0">
+                  <div class="suppended-text" >
+                    <p >SUSPENDED</p>
+                    </div>
+                </div>
+          </div>
+        </div>
+      </div>
+  

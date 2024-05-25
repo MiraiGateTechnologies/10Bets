@@ -1,0 +1,36 @@
+<div class="passbook">    
+    <h4>PASSBOOK</h4>
+</div>
+<div class="container" style="width: 100%; overflow-x: auto;">
+    
+    <table class="table">
+      <thead>
+        <tr>
+          <th>Date</th>
+          <th>Time</th>
+          <th>Remark</th>
+          <th>Won By</th>
+          <th>Won</th>
+          <th>Loss</th>
+          <th>Balance</th>
+          
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let match of matches | paginate: { itemsPerPage: pageSize, currentPage: currentPage };let i = index">
+          <td [ngStyle]="{'background-color': i % 2 === 0 ? '#B8C0DD' : 'none'}">
+              <img *ngIf="match.balance > 0" src="assets/up.png" alt="Up" style="width: 20px; height: 20px; margin-right: 5px;">
+              <img *ngIf="match.balance < 0" src="assets/down.png" alt="Down" style="width: 20px; height: 20px; margin-right: 5px;">
+            {{ match.date }}</td>
+          <td [ngStyle]="{'background-color': i % 2 === 0 ? '#B8C0DD' : 'none'}">{{ match.time }}</td>
+          <td [ngStyle]="{'background-color': i % 2 === 0 ? '#B8C0DD' : 'none'}">{{ match.remark }}</td>
+          <td [ngStyle]="{'background-color': i % 2 === 0 ? '#B8C0DD' : 'none'}">{{ match.wonBy }}</td>
+          <td [ngStyle]="{'background-color': i % 2 === 0 ? '#B8C0DD' : 'none'}">{{ match.won }}</td>
+          <td [ngStyle]="{'background-color': i % 2 === 0 ? '#B8C0DD' : 'none'}">{{ match.loss }}</td>
+          <td [ngStyle]="{'background-color': i % 2 === 0 ? '#B8C0DD' : 'none'}">{{ match.balance }}</td>
+        </tr>
+      </tbody>
+    </table>
+    <pagination-controls (pageChange)="currentPage = $event" style="justify-content: center; align-items: center;text-align: center;"></pagination-controls>
+  </div>
+  

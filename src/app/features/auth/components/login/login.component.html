@@ -1,0 +1,38 @@
+
+<div class="login-page">
+    <div class="container">
+        <div class="row">
+            <div class="login-text">
+              <h3 class="login">10 Bets</h3>
+              <h3 class="login">LOGIN</h3>
+            </div>
+            <div class="login-background-img">
+              <img src="../../assets/pngwing.png">
+            </div>
+
+        <div class="col-auto">
+          <form class="login-form" [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+            <div class="form-group">
+              <label for="clientCode" >Client Code*</label>
+              <input type="text" class="form-control" id="code" formControlName="code" id="clientCode" placeholder="Enter Client Code" required>
+            </div>
+            <div class="input-group">
+              <input [type]="showPassword ? 'text' : 'password'" id="password" formControlName="password" class="form-control" placeholder="Password">
+              <span class="input-group-text" id="basic-addon1"><i class="material-icons toggle-icon" (click)="togglePasswordVisibility()">{{showPassword ? 'visibility' : 'visibility_off'}}</i></span>
+            </div>
+            <div *ngIf="loginForm.get('password')?.hasError('required') && loginForm.get('password')?.touched"
+            style="color: red">
+            Password is required.
+       </div>
+            <div *ngIf="loginForm.get('password')?.hasError('minlength') && loginForm.get('password')?.touched" class="alert alert-danger">
+            Password must be at least 8 characters..</div>
+            <div class="input-group">
+            <button type="submit" class="btn login" >LOGIN</button>
+            <div *ngIf="errorMessage" class="error-message">{{ errorMessage }}</div>
+            <button type="button" class="btn login">LOGIN WITH DEMO ID</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+  

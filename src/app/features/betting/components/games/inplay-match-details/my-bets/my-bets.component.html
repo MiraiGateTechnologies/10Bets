@@ -1,0 +1,28 @@
+<div class="container-fluid" *ngIf="bettDetails.length != 0">
+    <div class="bet-table">
+        <h4>Session Bets</h4>
+        <table class="table" *ngFor="let bet of bettDetails">
+          <tbody >
+            <tr style="white-space: nowrap;"><th>Amount</th><td>{{ bet.bitamount }}</td></tr>
+            <tr style="white-space: nowrap;"><th>Rate</th><td>{{ bet.bitrate }}</td></tr>
+            <tr style="white-space: nowrap;"><th>Run</th><td>{{ bet.run }}</td></tr>
+            <tr style="white-space: nowrap;"><th>Mode</th><td>{{ bet.bitmode }}</td></tr>
+            <tr style="white-space: nowrap;"><th>Session Name</th><td>{{ bet.sessionname }}</td></tr>
+          </tbody>
+          <tr *ngIf="bettDetails.length==0"><td>No Current Bets Available </td></tr>
+          </table>
+    </div>
+  </div>
+  <div class="container-fluid" *ngIf="matchBets.length != 0">
+      <table class="table  bet-table" *ngFor="let bet of matchBets">
+    <h4>Match Bets</h4>
+      <tbody >
+        <!-- <tr style="white-space: nowrap;"><th>Auto No</th><td>{{ bet.autono }}</td></tr> -->
+        <tr style="white-space: nowrap;"><th>Amount</th><td>{{ bet.bitamount }}</td></tr>
+        <tr style="white-space: nowrap;"><th>Bit Rate</th><td>{{ bet.bitrate }}</td></tr>
+        <tr style="white-space: nowrap;"><th>Bit Mode</th><td>{{ bet.bitmode }}</td></tr>
+        <tr style="white-space: nowrap;"><th>Bit Team</th><td>{{ bet.bitteam }}</td></tr>
+      </tbody>
+      <tr *ngIf="matchBets.length==0"><td>No Current Bets Available </td></tr>
+    </table>
+  </div>

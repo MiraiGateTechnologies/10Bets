@@ -1,0 +1,93 @@
+/* .score{
+    height: auto;
+    border: 2px solid #FFB449;
+    background-color: #272727;
+    font-family: 'poppins',sans-serif;
+    overflow: hidden;
+    position: relative;
+    padding:5px;
+    width: 100%;
+  }
+
+  .scorecard{
+    height: auto;
+  }
+  .msg {
+    display: inline-block;
+    white-space: nowrap;
+    overflow: hidden;
+    color: white;
+    position: relative;
+    font-family: 'poppins',sans-serif;
+    animation: moveRightToLeft 5s linear infinite;
+  }
+  .cricket .batting h4{
+    color: white;
+    font-family: 'poppins';
+    font-weight: 600;
+    font-size: 14px;
+    padding-left: 5px;
+    padding-right: 5px;
+  }
+  .cricket .batting h6, .cricket .bolling h6{
+    color: white;
+    font-family: 'poppins';
+    font-size: 10px;
+    font-weight: 400;
+    line-height: 0.7em;
+    padding-left: 5px;
+    padding-right: 5px;
+  
+  }
+  
+  .cricket .bolling h4{
+    color: white;
+    font-family: 'poppins';
+    font-weight: 600;
+    font-size: 14px;
+    padding-left: 5px;
+    padding-right: 5px;
+  }
+  .team{
+    margin-left: 0;
+    line-height: 1rem!important;
+    display: flex;
+    font-size: 14px;
+    font-family: 'Poppins',sans-serif;
+    font-weight: 900 !important;
+  }
+  .team-score{
+    padding-left: 5px;
+    padding-right: 5px;
+    line-height: 1rem!important;
+    display: flex;
+    font-size: 14px;
+    font-family: 'Poppins',sans-serif;
+    font-weight: 900 !important;
+    justify-content: space-between;
+    margin: auto;
+  }
+  .team-details{
+    text-align: center;
+    margin-top: 5px;
+  }
+  .team-details h4{
+    line-height: 0.9em;
+    color: white;
+    font-size: 12px;
+    font-weight: 400;
+    font-family: 'poppins',sans-serif;
+  }
+  .cricket{
+    display: flex;
+    justify-content: space-between;
+    margin:auto;
+  } */
+
+
+  /* .scorecard {
+    height: 400px;
+  } */
+  .score{
+    height: 100% !important;
+  }

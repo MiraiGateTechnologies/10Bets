@@ -1,0 +1,61 @@
+
+<!-- <app-loading *ngIf="isLoading"></app-loading> -->
+<form [formGroup]="betForm">
+<div class="modal-body">
+  <div class="sidebar-icon">
+    <i class="bi bi-x custom-x-icon" style=" margin-left: auto" (click)="dismiss()"></i>
+  </div>
+  <div class="container-fluid">
+    <div class="col-12">
+      <div class="row">
+        <div class="col-5">
+          <div class="header-1"><h5 class="team">Teams</h5><p style="line-height: 1rem;">{{data.team}}</p></div>
+        </div>
+      <div class="col-2">
+        <div class="header-2"><h5>Rate</h5><p>{{data.rate}}</p></div>
+      </div>
+      <div class="col-2">
+        <div class="header-2"><h5>Run</h5><p>{{data.run}}</p></div>
+      </div>
+      <div class="col-2">
+      <div class="header-3"><h5>Mode</h5><p>{{data.mode}}</p></div>
+      </div>
+      </div>
+    </div>
+    <div class="place-bets-amount">
+      <div class="row">
+        <div class="col-4" *ngFor="let amount of buttonAmount">
+          <button class="btn place-bet-button" (click)="selectAmount(amount)" >{{amount}}</button>
+        </div>
+      </div>
+    </div>
+    <div class="col-12">
+      <div class="row">
+        <div class="col-12">
+          <div class="mb-3">
+            <div class="main-place-bet">
+              <div class="place-bet-1">
+                <label for="amount" class="form-label">Amount</label>
+                <input type="number" formControlName="amount" class="form-control form-control-sm" id="amount" placeholder="Amount" (input)="validateAmount($event)">
+                <div *ngIf="errorMessage" class="error-msg">
+                  {{ errorMessage }}
+                </div>
+              </div>
+              <div class="place-bet-2">
+                <div class="count-down" style="padding-top:28px;">
+                  <button class="btn btn-sm placebet-submit-btn">{{ countDown }}</button>
+                </div>
+              </div>
+
+          </div>
+        </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+  <button type="button" class="btn btn-sm placebet-submit-btn" (click)="onSubmit()" style="width: 100%;">Place Bet</button>
+</div>
+</form>
+<!-- <div class="modal-footer" >
+</div> -->

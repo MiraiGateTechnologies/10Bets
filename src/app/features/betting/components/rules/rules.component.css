@@ -1,0 +1,19 @@
+h4{
+    font-family: 'poppins',sans-serif;
+    font-weight: 700;
+    margin: 10px;
+    color:#233479 ;
+    font-size: 20px;
+    padding: 5px;
+}
+.list-group-item{
+    color: #233479;
+    font-family: 'poppins';
+    font-size: 16px;
+    font-weight: 500;
+    border: none !important;
+    border-bottom: 2px solid #233479 !important;
+}
+.list-group{
+    margin-bottom: 70px;
+}

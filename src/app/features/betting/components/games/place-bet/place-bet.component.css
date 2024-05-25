@@ -1,0 +1,122 @@
+/* Add your custom styles here to match the design */
+.modal-header {
+    background-color: black;
+  }
+  
+  .custom-x-icon{
+    color: white !important;
+    font-size: 2.5rem; /* Adjust the size as needed */
+  }
+  .place-bets-amount{
+    display: flex;
+  }
+  .placebet-submit-btn{
+    background-color: #FFB449;
+    width: 100%;
+    color:black;
+    font-family: 'poppins';
+    font-weight: bold ;
+  
+    }
+  .place-bet-button{
+    border-radius: 20px;
+    margin-bottom: 10px;
+    width:80px;
+    height: 30px;
+    font-size: 12px !important;
+    color: white;
+    font-family: 'poppins',sans-serif;
+    font-weight: 400;
+    border: 1px solid white;
+    transform: scale(1.1);
+  
+  }
+  .modal-header, .container-fluid {
+    position: relative !important;
+  }
+  .sidebar-icon {
+    display: flex;
+    justify-content: flex-end; /* Aligns children to the right */
+    align-items: start; /* Aligns children to the top */
+  }
+  
+  .modal-content {
+    background-color: black !important;
+  }
+  h5{
+    font-family: 'poppins',sans-serif;
+    color:white
+  }
+  .error-msg{
+    color: red;
+  }
+  label{
+    font-family: 'poppins',sans-serif;
+    color:white
+  }
+  .place-bet-1{
+    margin-right: 10px;
+  }
+  .team{
+    margin-left: 0;
+    line-height: 1rem!important;
+    font-size: 14px;
+    font-family: 'Poppins',sans-serif;
+    font-weight: 900 !important;
+  }
+  .custom-small-input {
+    width: 350px !important;
+    height: 25px; /* Reduce the height */
+    font-size: 12px; /* Adjust the font size */
+    padding: 0 5px; /* Adjust padding to ensure the text is properly aligned */
+  }
+  
+  .main-place-bet{
+    display: flex;
+  }
+  p{
+    font-family: 'poppins',sans-serif;
+    color: white;
+    font-size: 12px;
+  }
+  .count-down{
+    color: white;
+  
+    margin-top: 0px;
+  }
+  .place-bets-header{
+    display: flex;
+    margin: auto;
+    padding: 10px;
+    color: #FFB449;
+  }
+  .btn-sm{
+   background-color: #FFB449;
+  }
+  .header-1{
+    font-family: 'poppins';
+    font-size: 18px;
+  }
+  .modal-body {
+    background-color: black !important;  /* Replace with your desired color */
+  }
+  .modal-dialog{
+    background-color: black !important;
+  }
+  /* Style for bet amount buttons, input, and 'Place Bet' button as per your design */
+  .bet-buttons button {
+    background: blue;
+    margin: 5px;
+  }
+  
+  /* The red button as shown in your design */
+  .btn-red {
+    background-color: #ff0000;
+    color: white;
+  }
+  .custom-modal-content{
+    background-color: black !important;
+  }
+  /* Rest of your styling */
+  body{background-color: black !important;}
+  
