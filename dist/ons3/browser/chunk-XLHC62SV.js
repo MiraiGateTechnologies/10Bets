@@ -1,0 +1,1 @@
+import{Gb as r,Lb as l,ga as o,ob as a,pb as i}from"./chunk-MRLDANVD.js";var c=(()=>{let e=class e{};e.\u0275fac=function(n){return new(n||e)},e.\u0275cmp=o({type:e,selectors:[["app-inplay-football"]],standalone:!0,features:[l],decls:2,vars:0,template:function(n,s){n&1&&(a(0,"p"),r(1,"inplay-football works!"),i())}});let t=e;return t})();export{c as InplayFootballComponent};
