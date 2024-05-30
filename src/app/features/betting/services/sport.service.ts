@@ -4,6 +4,7 @@ import { Injectable } from '@angular/core';
 import { Observable, map } from 'rxjs';
 import { MatchData } from '../../../shared/interface/sport.interface';
 import { environment } from '../../../../assets/environment/environment';
+import { EventData } from '../../../shared/interface/match-details.interface';
 
 @Injectable({
   providedIn: 'root'
@@ -40,10 +41,5 @@ export class SportService {
     return this.http.get('/assets/json/bettingData.json');
   }
 
-  getDataByMatchCode(matchCode: string): Observable<any> {
-    console.log( matchCode)
-    return this.getBettingData().pipe(
-      map((data:any) => data.filter((item:any) => item.matchcode === matchCode))
-    );
-  }
+  
 }

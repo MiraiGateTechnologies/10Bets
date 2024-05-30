@@ -1,28 +1,38 @@
 import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable, catchError, map, throwError } from 'rxjs';
+import { BehaviorSubject, Observable, catchError, map, throwError } from 'rxjs';
 import { environment } from '../../../../assets/environment/environment';
+import { GameDetails } from '../../../shared/interface/game-details.model';
+import { EventData } from '../../../shared/interface/match-details.interface';
 
 @Injectable({
   providedIn: 'root'
 })
 export class TenBettsService {
-  apiUrl = environment.exchApiUrl;
-  // apiUrl = 'https://api.betguru247.net/game/inPlay';
+  apiUrls =environment.apiUrlIP;
+  oddsApiUrls =environment.oddApiUrl;
+
+    private dataSubject = new BehaviorSubject<any>(null);
+    public data$ = this.dataSubject.asObservable();
+
   constructor(private http: HttpClient) { }
-  // getCricketBet():Observable<any>{
-  //   const url = this.apiUrl+'/game/inPlay';
-  //   return this.http.get(url).pipe(
-  //     catchError(this.handleError))
-  // }
 
-
-  // jsonData
-  getCricketBettingData(): Observable<any> {
-    return this.http.get('/assets/json/cricketListData.json');
+  // Fetch cricket game list from the API
+   getGamesBet(): Observable<GameDetails> {
+    const url = `${this.apiUrls}/api/v1/gameList`;
+    return this.http.get<GameDetails>(url);
   }
-  getCricketBet(){
-    return this.http.get('/assets/json/cricketListData.json');
+
+    // Method to update the data
+    updateData(data: any): void {
+      this.dataSubject.next(data);
+    }
+
+  getDataByMatchCode(matchCode: string): Observable<EventData> {
+    const url = `${this.oddsApiUrls}/api/v2/odds/fetch/${matchCode}`
+    return this.http.get<EventData>(url).pipe(
+      catchError(this.handleError)
+    );
   }
 
 

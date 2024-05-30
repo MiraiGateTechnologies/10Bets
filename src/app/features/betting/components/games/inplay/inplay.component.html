@@ -1,0 +1,37 @@
+<div class="match-card">
+    <div class="header">
+        <div class="icon-cricket" *ngIf="gamesName == 'CRICKET'">🏏Cricket</div>
+        <div class="icon-cricket" *ngIf="gamesName == 'FOOTBALL'">Football</div>
+
+        <div class="one-x-two">
+            <div class="one">1</div>
+            <div class="x">x</div>
+            <div class="two">2</div>
+        </div>        
+    </div>
+        <div class="match-details" *ngFor="let data of getBettingArrayData" (click)="inPlayDetails(data)">
+            <div class="match-left">
+                <div class="match-date" *ngIf="data.inPlay == 'True'">
+                    <p class="small-bracket">(<span class="blinking-bullet"></span>)</p>
+                </div>
+                 <div class="match-date" *ngIf="data.inPlay == 'False'">
+                    <p class="match-time">{{data.gameTime}}</p>
+                </div>
+                <div class="match-team">
+                    <p>{{truncateTitle(truncateTitle(data.eventName))}}</p>
+                </div>
+            </div>
+            <div class="match-one-x-two">
+                <div class="bet-one">{{data.back1}}</div>
+                <div class="bet-x">-</div>
+                <div class="bet-two">{{data.lay1}}</div>
+            </div>
+            <div>
+            </div>
+        </div>
+        
+    </div>
+    <div class="no-data-available" style="width: 100%;" *ngIf="getBettingArrayData.length ==0">
+        <h4 style="text-align: center; justify-content: center; color: black; font-family: 'poppins';">No Data Available</h4>
+    </div>       
+<app-loading-overlay></app-loading-overlay>

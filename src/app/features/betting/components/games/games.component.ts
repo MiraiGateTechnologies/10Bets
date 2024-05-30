@@ -1,12 +1,11 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import { RouterModule, RouterOutlet } from '@angular/router';
-import { InplayCricketComponent } from './inplay-cricket/inplay-cricket.component';
 
 @Component({
   selector: 'app-games',
   standalone: true,
-  imports: [CommonModule,RouterOutlet,RouterModule,],
+  imports: [CommonModule,RouterOutlet,RouterModule],
   templateUrl: './games.component.html',
   styleUrl: './games.component.css'
 })

@@ -1,0 +1,11 @@
+.small-bracket{
+  color: #FFB449;
+  margin-left: 5px;
+  margin-top: 10px;
+}
+.match-left{
+  border-bottom: 1px solid black;
+}
+.match-one-x-two{
+  border-bottom: 1px solid black;
+}

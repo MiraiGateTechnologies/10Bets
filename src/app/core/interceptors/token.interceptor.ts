@@ -11,7 +11,7 @@ export const tokenInterceptor: HttpInterceptorFn = (req, next) => {
   const token = `Bearer ${myToken}`;
   const cloneReq =req.clone({
     setHeaders :{
-      Authorization: `Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJDMTA2NyIsImF1ZCI6IjIiLCJzY29wZXMiOlt7ImF1dGhvcml0eSI6IjIifV0sImlzcyI6IklTU1VFUiIsImlhdCI6MTcxNjE5MTEzNiwiZXhwIjoxNzE3MDU1MTM2fQ.uSkRPGhOusg__xQWT8HBUiTtOs-x_T58fqpyZoL-pzw`
+      Authorization: `Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiI2NTI3ZjUxODdmNTA3MzRkOWM2MjhhZGUiLCJpYXQiOjE3MTY3OTI2OTgsImV4cCI6MTcxOTM4NDY5OH0.iedl1mDTA6w4K-w6MtvumUNR-PbB0oQa3tyE4l9QaOE`
     }
   })
   return next(cloneReq);

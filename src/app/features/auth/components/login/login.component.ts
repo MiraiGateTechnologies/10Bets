@@ -5,6 +5,7 @@ import { Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
 import { MdbFormsModule } from 'mdb-angular-ui-kit/forms';
 import { AuthService } from '../../../betting/services/auth.service';
+import { LoadingOverlayComponent } from '../../../../shared/components/loading-overlay/loading-overlay.component';
 
 @Component({
   selector: 'app-login',

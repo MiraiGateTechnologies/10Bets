@@ -2,7 +2,7 @@
   <div class="games-text">
       <div class="game-list">
         <div *ngFor="let game of games" class="game-item">
-          <a [routerLink]="[ game.name.toLowerCase()]">
+          <a [routerLink]="[ game.name.toUpperCase()]">
             <img [src]="game.img" alt="{{ game.name }}">
             <p>{{ game.name }}</p>
           </a>

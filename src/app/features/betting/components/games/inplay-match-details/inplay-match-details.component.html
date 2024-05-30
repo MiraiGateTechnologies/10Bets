@@ -5,7 +5,6 @@
         <i  class="bi bi-stopwatch" style="color: white; font-weight: bold;" (click)="goBack()" ></i>
       </div>
         <div class="sport-details-text">
-        <!-- {{team1}} vs {{team2}} -->
         {{team}}
       </div>
       <div class="icon">
@@ -33,7 +32,7 @@
     </div>
     </div>
     <div *ngIf="visibilityStates.mybet" style="color: white;">
-        <app-my-bets [bettDetails]="matchBets"  [matchBets] = "matchBets"></app-my-bets>
+        <app-my-bets  [matchBets] ="matchBets"></app-my-bets>
     </div>
     <div class="container-fluid">
         <div class="match-card">
@@ -47,24 +46,23 @@
             <div class="match-details" *ngFor="let data of MatchOdds">
                 <div class="match-left">                    
                     <div class="match-team">
-                        <p>{{truncateTitle(truncateTitle(data.team))}}</p>
+                        <p>{{truncateTitle(truncateTitle(data.runnerName))}}</p>
                     </div>
                 </div>
-                <div class="match-one-x-two" *ngIf="data.krate !=0 || data.lrate !=0">
-                    <div class="bet-one"  (click)="open('K',data)">{{data.krate}}</div>
-                    <div class="bet-two"  (click)="open('L',data)">{{data.lrate}}</div>
+                <div class="match-one-x-two" *ngIf="data.back1 !=0 || data.lay1 !=0">
+                    <div class="bet-one"  (click)="open('K',data)">{{data.back1}}</div>
+                    <div class="bet-two"  (click)="open('L',data)">{{data.lay1}}</div>
                 </div>       
-                <div class="latest" *ngIf="data.krate==0 && data.lrate==0">
+                <div class="latest" *ngIf="data.back1==0 && data.lay1==0">
                     <div class="suppended-text" >
                       <p >SUSPENDED</p>
-              
                       </div>
                   </div>
             </div>
         </div>
     </div>
 
-    <div class="container-fluid">
+    <!-- <div class="container-fluid">
       <div class="match-card">
           <div class="header">
               <div class="icon-cricket">BOOKMARK</div>
@@ -91,7 +89,7 @@
               </div>
         </div>
       </div>
-    </div>
+    </div> -->
 
     <div class="container-fluid">
       <div class="match-card">
@@ -102,17 +100,17 @@
                   <div class="two">Lay</div>
               </div>        
           </div>
-          <div class="match-details" *ngFor="let data of MatchOdds">
+          <div class="match-details" *ngFor="let data of marketData">
             <div class="match-left">                    
                 <div class="match-team">
-                    <p>{{truncateTitle(truncateTitle(data.team))}}</p>
+                    <p>{{truncateTitle(truncateTitle(data.runnerName))}}</p>
                 </div>
             </div>
-            <div class="match-one-x-two" *ngIf="data.krate !=0 || data.lrate !=0">
-                <div class="bet-one"  (click)="open('K',data)">{{data.krate}}</div>
-                <div class="bet-two"  (click)="open('L',data)">{{data.lrate}}</div>
+            <div class="match-one-x-two" *ngIf="data.back !=0 || data.lay !=0">
+                <div class="bet-one"  (click)="open('K',data)">{{data.back}}</div>
+                <div class="bet-two"  (click)="open('L',data)">{{data.lay}}</div>
             </div>       
-            <div class="latest" *ngIf="data.krate==0 && data.lrate==0">
+            <div class="latest" *ngIf="data.back==0 && data.lay==0">
                 <div class="suppended-text" >
                   <p >SUSPENDED</p>
                   </div>
@@ -130,25 +128,31 @@
 
 
     <div class="container-fluid">
-        <div class="match-card">
+        <div class="match-card fancy">
             <div class="header">
-                <div class="icon-cricket">SESSIONS RUNS</div>
+                <div class="icon-cricket">Fancy</div>
                 <div class="one-x-two">
                     <div class="one">YES</div>
                     <div class="two">NO</div>
                 </div>        
             </div>
-            <div class="match-details" *ngFor="let data of sessionBets">
+            <div class="match-details" *ngFor="let data of fancy">
                 <div class="match-left">                    
                     <div class="match-team">
-                        <p>{{truncateTitle(truncateTitle(data.name))}}</p>
+                        <p>{{truncateTitle(truncateTitle(data.runnerName))}}</p>
                     </div>
                 </div>
-                <div class="match-one-x-two" *ngIf="(data.nrun !=0 || data.nrate != 0)">
-                    <div class="bet-one" (click)="open('YES',data)" >{{data.nrun}},{{data.nrate}}</div>
-                    <div class="bet-two" (click)="open('NO',data)" >{{data.yrun}},{{data.yrate}}</div>
+                <div class="match-one-x-two" *ngIf="(data.nRun !=0 || data.nRate != 0)">
+                    <div class="bet-one" (click)="open('YES',data)" >
+                        <div class="n-run">{{data.nRun}}</div>
+                        <div class="n-rate">{{data.nRate}}</div>                        
+                    </div>
+                    <div class="bet-two" (click)="open('NO',data)" >
+                        <div class="n-run">{{data.yRun}}</div>
+                        <div class="n-rate">{{data.yRate}}</div> 
+                    </div>
                 </div> 
-                <div class="latest" *ngIf="(data.nrun ==0 || data.nrate == 0)" >
+                <div class="latest" *ngIf="(data.nRun ==0 || data.nRate == 0)" >
                     <div class="suppended-text" >
                       <p >SUSPENDED</p>
                       </div>
@@ -158,7 +162,7 @@
       </div>
 
       <!-- TIE MATCH CONTAINER -->
-    <div class="container-fluid" style="margin-bottom: 70px;">
+    <!-- <div class="container-fluid" style="margin-bottom: 70px;">
         <div class="match-card">
             <div class="header">
                 <div class="icon-cricket">TIED MATCH</div>
@@ -184,5 +188,5 @@
                 </div>
           </div>
         </div>
-      </div>
+      </div> -->
   

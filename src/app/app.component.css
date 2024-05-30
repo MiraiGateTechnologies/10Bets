@@ -1,0 +1,22 @@
+
+  /* Make the container take up the entire height of the viewport */
+  .container-fluid {
+    height: 100vh;
+    display: flex;
+    flex-direction: column; /* Stack children vertically */
+  }
+  
+  /* Assign percentage heights to child elements */
+  .header {
+    height: 10vh; /* 20% of the parent container */
+    background-color: #f8f9fa; /* Light grey background, change as needed */
+  }
+  
+  .canvas {
+    height: 60vh; /* 50% of the parent container */
+  }
+  
+  .betting-app {
+    height: 30vh; /* 30% of the parent container */
+    background-color: #e9ecef; /* Lighter grey background, change as needed */
+  }
